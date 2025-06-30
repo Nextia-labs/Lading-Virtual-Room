@@ -64,29 +64,36 @@ export default {
           ring: "var(--sidebar-ring)",
         },
       },
-      keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
+    keyframes: {
+        // 🟠 Palpitar para íconos (ya agregado)
+        "pulse-icon": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            opacity: "1",
           },
-          to: {
-            height: "var(--radix-accordion-content-height)",
+          "50%": {
+            transform: "scale(1.15)",
+            opacity: "0.9",
           },
         },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
+        // 🌗 Rebote suave para el toggle de modo oscuro
+        "bounce-switch": {
+          "0%, 100%": {
+            transform: "translateY(0)",
           },
-          to: {
-            height: "0",
+          "50%": {
+            transform: "translateY(-2px)",
           },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-icon": "pulse-icon 1.5s ease-in-out infinite",
+        "bounce-switch": "bounce-switch 0.4s ease",
       },
     },
   },
+
+
+
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

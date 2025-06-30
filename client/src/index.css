@@ -23,14 +23,17 @@
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
+  --scrollbar-width: 16px;
 
   /* Custom Nextia Colors */
   --plasma-white: hsl(195, 100%, 97%);
   --light-cyan: hsl(172, 100%, 50%);
   --fashion-pink: hsl(308, 100%, 69%);
+  --pink-500: hsl(330, 81%, 60%);
   --soft-blue: hsl(190, 100%, 70%);
   --soft-magenta: hsl(334, 64%, 72%);
   --vibrant-cyan: hsl(188, 100%, 42%);
+  --vibrant-cyan-hover: hsl(188, 100%, 35%);
   --pearl-white: hsl(208, 14%, 97%);
   --dark-primary: hsl(229, 47%, 14%);
 }
@@ -66,6 +69,7 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+  
 }
 
 /* Custom Nextia Styles */
@@ -100,6 +104,10 @@
   color: hsl(308, 100%, 69%);
 }
 
+.text-vibrant-pink {
+  color: hsl(330, 81%, 60%);
+}
+
 .text-soft-blue {
   color: hsl(190, 100%, 70%);
 }
@@ -110,6 +118,10 @@
 
 .text-vibrant-cyan {
   color: hsl(188, 100%, 42%);
+}
+
+.text-hover-vibrant-cyan {
+  color: hsl(188, 100%, 35%);
 }
 
 .text-pearl-white {
@@ -187,4 +199,132 @@
   background-clip: text;
   color: transparent;
 }
+
+
+
+ /* blubble button*/
+/* === Burbuja Base === */
+.bubble-button {
+  @apply w-full text-white px-6 py-4 rounded-full font-medium text-lg h-[48px] relative overflow-hidden border transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.08) 0%, rgba(0, 200, 255, 0.12) 50%, rgba(0, 150, 255, 0.08) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 24px rgba(0, 255, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* === Hover Effect === */
+.bubble-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 32px rgba(0, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(12px);
+}
+
+/* === Active Effect === */
+.bubble-button:active:not(:disabled) {
+  transform: scale(0.98);
+  box-shadow:
+    0 4px 18px hsl(188, 100%, 32%),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* === Sparkle Animations === */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.bubble-sparkle {
+  @apply absolute bg-white rounded-full;
+  filter: blur(1px);
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.bubble-sparkle.secondary {
+  filter: blur(0.5px);
+  animation-delay: 0.5s;
+}
+
+.bubble-sparkle.small {
+  filter: blur(0.3px);
+  animation-delay: 1s;
+}
+
+.bubble-reflection {
+  @apply absolute top-1 left-2 right-2 h-4 rounded-full;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.6) 70%, transparent 100%);
+  filter: blur(2px);
+  opacity: 0.3;
+}
+
+
+.logout-button {
+  @apply bg-gradient-to-r from-pink-400 to-pink-500 shadow-lg;
+
+  background-blend-mode: screen;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.logout-button:hover {
+  @apply bg-pink-600/80 opacity-90 backdrop-blur-sm scale-95;
+
+  filter: brightness(0.9) ;
+  transform: translateY(1px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* === Custom Brilloso Button: Get Started === */
+.button-started {
+  @apply text-white font-semibold text-sm px-6 py-2 rounded-full transition-all duration-300 shadow-md;
+
+  background: linear-gradient(135deg, hsl(188, 100%, 42%), hsl(188, 100%, 50%));
+  box-shadow: 0 4px 15px hsla(188, 100%, 42%, 0.4);
+  background-blend-mode: screen;
+
+  /* ✨ Mejora la visibilidad del texto sobre fondo brillante */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.button-started:hover {
+  background: linear-gradient(135deg, hsl(188, 100%, 35%), hsl(188, 100%, 42%));
+  box-shadow: 0 10px 25px hsla(188, 100%, 25%, 0.5);
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+
+  /* Refuerzo de visibilidad en hover también */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* === Custom Pulsing Animation for Icons === */
+
+@keyframes pulse-grow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15); /* más notorio */
+    opacity: 0.85;
+  }
+}
+
+.pulse-icon {
+  animation: pulse-grow 1.58s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+
+
 

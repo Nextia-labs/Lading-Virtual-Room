@@ -17,6 +17,8 @@ import {
   Menu,
   LogOut
 } from "lucide-react";
+import VirtualStylingDemo from "@/components/VirtualStylingDemo";
+
 
 export default function HomePage() {
   const { user, logoutMutation } = useAuth();
@@ -33,7 +35,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-pearl-white text-dark-primary overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-pearl-white/95 backdrop-blur-md border-b border-light-cyan/20">
+      <nav className="fixed top-0 left-0 z-50 w-[calc(100vw-var(--scrollbar-width))] bg-pearl-white/95 backdrop-blur-md border-b border-light-cyan/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
@@ -41,8 +43,7 @@ export default function HomePage() {
                 <Sparkles className="text-white text-lg" />
               </div>
               <span className="text-2xl font-bold text-dark-primary">Nextia</span>
-            </div>
-            
+            </div>        
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-dark-primary hover:text-fashionPink transition-colors">Features</a>
               <a href="#how-it-works" className="text-dark-primary hover:text-fashionPink transition-colors">How It Works</a>
@@ -51,19 +52,17 @@ export default function HomePage() {
             </div>
             
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-dark-primary">Welcome, {user?.username}!</span>
+              <span className="inline-block animate-bounce-switch transition-transform duration-300">Welcome, {user?.username}!</span>
               <Button
-                onClick={handleLogout}
-                variant="outline"
-                size="sm"
-                className="text-dark-primary hover:text-fashion-pink border-dark-primary hover:border-fashion-pink"
-              >
-                <LogOut className="w-4 h-4 mr-2" />
-                Logout
+                  onClick={handleLogout}
+                  className="logout-button flex items-center gap-2 px-6 py-2 text-white rounded-full font-semibold text-sm transition-all duration-300"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
               </Button>
               <Button 
                 onClick={() => handleSubscribe('pro')}
-                className="gradient-button text-white px-6 py-2 rounded-full font-medium transition-all duration-300"
+                className="button-started text-white px-6 py-2 rounded-full font-medium transition-all duration-300"
               >
                 Get Started
               </Button>
@@ -114,7 +113,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-b from-soft-blue/20 to-fashion-pink/20 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-r from-fashion-pink to-light-cyan rounded-full flex items-center justify-center">
-                        <CheckCircle className="text-white text-4xl" />
+                        <CheckCircle className=" text-4xl" />
                       </div>
                       <p className="text-dark-primary font-medium">Virtual Fitting Active</p>
                       <p className="text-sm text-dark-primary/60 mt-1">Summer Dress - Size M</p>
@@ -154,37 +153,37 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Sparkles className="text-white text-2xl" />,
+                icon: <Sparkles className="text-light-cyan text-2xl" />,
                 gradient: "from-fashion-pink to-light-cyan",
                 title: "AR Try-On Technology",
                 description: "Experience clothes on your body using advanced augmented reality. See how garments fit, move, and look from every angle."
               },
               {
-                icon: <Ruler className="text-white text-2xl" />,
+                icon: <Ruler className="text-fashion-pink text-2xl" />,
                 gradient: "from-soft-blue to-vibrant-cyan",
                 title: "Perfect Size Matching",
                 description: "Our AI analyzes your measurements to recommend the perfect size every time. No more returns due to poor fit."
               },
               {
-                icon: <Palette className="text-white text-2xl" />,
+                icon: <Palette className="text-soft-blue text-2xl" />,
                 gradient: "from-soft-magenta to-fashion-pink",
                 title: "Style Recommendations",
                 description: "Get personalized style suggestions based on your preferences, body type, and fashion trends."
               },
               {
-                icon: <Share2 className="text-white text-2xl" />,
+                icon: <Share2 className="text-soft-magenta text-2xl" />,
                 gradient: "from-light-cyan to-soft-blue",
                 title: "Social Sharing",
                 description: "Share your virtual outfits with friends and get feedback before making a purchase decision."
               },
               {
-                icon: <ShoppingBag className="text-white text-2xl" />,
+                icon: <ShoppingBag className="text-vibrant-cyan text-2xl" />,
                 gradient: "from-vibrant-cyan to-soft-magenta",
                 title: "Seamless Shopping",
                 description: "Integrate with major fashion retailers for a smooth shopping experience from try-on to checkout."
               },
               {
-                icon: <Smartphone className="text-white text-2xl" />,
+                icon: <Smartphone className="text-vibrant-pink text-2xl" />,
                 gradient: "from-fashion-pink to-vibrant-cyan",
                 title: "Multi-Platform Access",
                 description: "Use Nextia on any device - smartphone, tablet, or desktop. Your virtual wardrobe syncs everywhere."
@@ -221,7 +220,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
-                icon: <UserPlus className="text-white text-4xl" />,
+                icon: <UserPlus className="text-4xl pulse-icon" />,
                 gradient: "from-fashion-pink to-light-cyan",
                 number: "1",
                 numberBg: "bg-soft-blue",
@@ -229,7 +228,7 @@ export default function HomePage() {
                 description: "Sign up and create your personal profile with basic measurements and style preferences."
               },
               {
-                icon: <Camera className="text-white text-4xl" />,
+                icon: <Camera className="text-4xl pulse-icon" />,
                 gradient: "from-soft-blue to-vibrant-cyan",
                 number: "2",
                 numberBg: "bg-fashion-pink",
@@ -237,7 +236,7 @@ export default function HomePage() {
                 description: "Use your camera to scan yourself and instantly try on clothes using our AR technology."
               },
               {
-                icon: <Heart className="text-white text-4xl" />,
+                icon: <Heart className="text-4xl pulse-icon" />,
                 gradient: "from-soft-magenta to-fashion-pink",
                 number: "3",
                 numberBg: "bg-light-cyan",
@@ -345,6 +344,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <section id="demo" className="relative overflow-hidden bg-gradient-hero py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <VirtualStylingDemo />
+        </div>
+      </section>
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gradient-to-br from-plasma-white via-pearl-white to-soft-blue/10">
@@ -444,7 +448,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-dark-primary text-plasma-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
