@@ -345,77 +345,64 @@ export default function VirtualStylingDemo() {
 
               {/* Action Button */}
       <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-  <Button 
-    className="w-full text-white px-6 py-4 rounded-full font-medium text-lg h-auto relative overflow-hidden border-0 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-    style={{
-      background: "linear-gradient(135deg, rgba(0, 255, 255, 0.08) 0%, rgba(0, 200, 255, 0.12) 50%, rgba(0, 150, 255, 0.08) 100%)",
-      backdropFilter: "blur(10px)",
-      boxShadow: `
-        0 8px 32px rgba(0, 255, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.03),
-        0 0 20px rgba(0, 255, 255, 0.1)
-      `,
-      border: "1px solid rgba(255, 255, 255, 0.15)",
-    }}
-    onClick={handleRunDemo}
-    disabled={!preferences.prendaTipo || !preferences.estiloPreferido || (!preferences.avatar && !preferences.userPhoto)}
-  >
-    {/* Efecto de destello principal */}
-    <div
-      className="absolute top-2 left-4 w-3 h-3 bg-white rounded-full opacity-80"
+    <Button 
+      className="w-full text-white px-6 py-4 rounded-full font-medium text-lg h-auto relative overflow-hidden border-0 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
       style={{
-        filter: "blur(1px)",
-        animation: "sparkle 2s ease-in-out infinite",
+        background: "linear-gradient(135deg, rgba(0, 255, 255, 0.08) 0%, rgba(0, 200, 255, 0.12) 50%, rgba(0, 150, 255, 0.08) 100%)",
+        backdropFilter: "blur(10px)",
+        boxShadow: `
+          0 8px 32px rgba(0, 255, 255, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.03),
+          0 0 20px rgba(0, 255, 255, 0.1)
+        `,
+        border: "1px solid rgba(255, 255, 255, 0.15)",
       }}
-    />
-    
-    {/* Destello secundario */}
-    <div
-      className="absolute top-4 right-6 w-2 h-2 bg-white rounded-full opacity-60"
-      style={{
-        filter: "blur(0.5px)",
-        animation: "sparkle 2.5s ease-in-out infinite 0.5s",
-      }}
-    />
-    
-    {/* Destello pequeño */}
-    <div
-      className="absolute bottom-3 left-8 w-1 h-1 bg-white rounded-full opacity-70"
-      style={{
-        filter: "blur(0.3px)",
-        animation: "sparkle 1.8s ease-in-out infinite 1s",
-      }}
-    />
-    
-    {/* Reflejo curvo superior */}
-    <div
-      className="absolute top-1 left-2 right-2 h-4 rounded-full opacity-30"
-      style={{
-        background: "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.6) 70%, transparent 100%)",
-        filter: "blur(2px)",
-      }}
-    />
-    
-    {/* Contenido original del botón */}
-    <span className="relative z-10 flex items-center justify-center">
-      <Play className="w-5 h-5 mr-2" />
-      Ver Mis Recomendaciones
-    </span>
-    
-    <style jsx>{`
-      @keyframes sparkle {
-        0%, 100% { 
-          opacity: 0.3; 
-          transform: scale(1);
-        }
-        50% { 
-          opacity: 1; 
-          transform: scale(1.2);
-        }
-      }
-    `}</style>
-  </Button>
+      onClick={handleRunDemo}
+      disabled={!preferences.prendaTipo || !preferences.estiloPreferido || (!preferences.avatar && !preferences.userPhoto)}
+    >
+      {/* Efecto de destello principal */}
+      <div
+        className="absolute top-2 left-4 w-3 h-3 bg-white rounded-full opacity-80"
+        style={{
+          filter: "blur(1px)",
+          animation: "sparkle 2s ease-in-out infinite",
+        }}
+      />
+      
+      {/* Destello secundario */}
+      <div
+        className="absolute top-4 right-6 w-2 h-2 bg-white rounded-full opacity-60"
+        style={{
+          filter: "blur(0.5px)",
+          animation: "sparkle 2.5s ease-in-out infinite 0.5s",
+        }}
+      />
+      
+      {/* Destello pequeño */}
+      <div
+        className="absolute bottom-3 left-8 w-1 h-1 bg-white rounded-full opacity-70"
+        style={{
+          filter: "blur(0.3px)",
+          animation: "sparkle 1.8s ease-in-out infinite 1s",
+        }}
+      />
+      
+      {/* Reflejo curvo superior */}
+      <div
+        className="absolute top-1 left-2 right-2 h-4 rounded-full opacity-30"
+        style={{
+          background: "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.6) 70%, transparent 100%)",
+          filter: "blur(2px)",
+        }}
+      />
+      
+      {/* Contenido original del botón */}
+      <span className="relative z-10 flex items-center justify-center">
+        <Play className="w-5 h-5 mr-2" />
+        Ver Mis Recomendaciones
+      </span>
+    </Button>
 </div>
             </div>
 

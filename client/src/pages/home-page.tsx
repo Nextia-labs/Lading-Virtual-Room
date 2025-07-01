@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import VirtualStylingDemo from "@/components/VirtualStylingDemo";
 
+import ThemeToggle from "@/components/ui/ThemeToggle"
 
 export default function HomePage() {
   const { user, logoutMutation } = useAuth();
@@ -52,7 +53,7 @@ export default function HomePage() {
             </div>
             
             <div className="flex items-center space-x-4">
-              <span className="inline-block animate-bounce-switch transition-transform duration-300">Welcome, {user?.username}!</span>
+              <ThemeToggle />
               <Button
                   onClick={handleLogout}
                   className="logout-button flex items-center gap-2 px-6 py-2 text-white rounded-full font-semibold text-sm transition-all duration-300"
@@ -100,7 +101,7 @@ export default function HomePage() {
                 </Button>
                 <Button 
                   variant="outline"
-                  className="border-2 border-dark-primary text-dark-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-dark-primary hover:text-white transition-all duration-300"
+                  className="border-2 border-dark-primary text-dark-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-dark-primary transition-all duration-300"
                 >
                   Watch Demo
                 </Button>
