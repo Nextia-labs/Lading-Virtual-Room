@@ -3,7 +3,8 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   safelist: ["dark:bg-gradient-dark"],
-  content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  content: [  "./index.html",           // la index.html que está en client/
+    "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       borderRadius: {

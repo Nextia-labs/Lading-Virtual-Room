@@ -23,7 +23,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle"
 
 
 export default function HomePage() {
- /* const { user, logoutMutation } = useAuth();
+  const { user, logoutMutation } = useAuth();
   const [, setLocation] = useLocation();
 
 
@@ -33,7 +33,7 @@ export default function HomePage() {
 
   const handleLogout = () => {
     logoutMutation.mutate();
-  };*/
+  };
 
   return (
     <div className="min-h-screen bg-pearl-white text-dark-primary overflow-x-hidden">
@@ -57,14 +57,14 @@ export default function HomePage() {
             <div className="flex items-center space-x-4">
               <ThemeToggle />
               <Button
-                
+                  onClick={handleLogout}
                   className="logout-button flex items-center gap-2 px-6 py-2 text-white rounded-full font-semibold text-sm transition-all duration-300"
                 >
                   <LogOut className="w-4 h-4" />
                   Logout
               </Button>
               <Button 
-             
+                onClick={() => handleSubscribe('pro')}
                 className="button-started text-white px-6 py-2 rounded-full font-medium transition-all duration-300"
               >
                 Get Started
@@ -96,7 +96,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
-                
+                  onClick={() => handleSubscribe('pro')}
                   className="gradient-button text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg"
                 >
                   Start Virtual Fitting
@@ -266,7 +266,7 @@ export default function HomePage() {
           
           <div className="text-center mt-12 scroll-trigger">
             <Button 
-            
+              onClick={() => handleSubscribe('pro')}
               className="gradient-button text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg"
             >
               Try It Now - It's Free!
@@ -435,7 +435,7 @@ export default function HomePage() {
                   </ul>
                   
                   <Button 
-                  
+                    onClick={() => handleSubscribe(plan.name.toLowerCase())}
                     className="w-full py-3 rounded-full font-semibold transition-all duration-300 gradient-button text-white"
                   >
                     Subscribe Now
