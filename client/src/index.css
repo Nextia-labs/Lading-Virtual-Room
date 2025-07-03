@@ -24,6 +24,12 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   --scrollbar-width: 16px;
+    --gradient-hero: linear-gradient(
+    135deg,
+  hsl(195, 100%, 97%) 0%,
+  hsl(190, 100%, 70%) 50%,
+  hsl(308, 100%, 69%) 100%
+  );
 
   /* Custom Nextia Colors */
   --plasma-white: hsl(195, 100%, 97%);
@@ -59,6 +65,20 @@
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
+  --gradient-background: linear-gradient(
+      135deg,
+      hsl(188, 100%, 12%) 0%,
+      hsl(188, 100%, 17%) 50%,
+      hsl(188, 100%, 22%) 100%
+    );
+
+  --gradient-hero: linear-gradient(
+  135deg,
+  hsl(195, 100%, 14%) 0%,     /* Cian muy oscuro */
+  hsl(190, 100%, 22%) 50%,    /* Azul profundo */
+  hsl(308, 100%, 30%) 100%    /* Magenta vibrante, más tenue */
+  );
+  
 }
 
 @layer base {
@@ -86,10 +106,6 @@
 .popular-glow {
   box-shadow: 0 0 20px hsla(188, 100%, 42%, 0.5);
   border: 2px solid hsl(188, 100%, 42%);
-}
-
-.bg-gradient-hero {
-  background: linear-gradient(135deg, hsl(195, 100%, 97%) 0%, hsl(190, 100%, 70%) 50%, hsl(308, 100%, 69%) 100%);
 }
 
 .text-plasma-white {
@@ -163,6 +179,21 @@
 .bg-dark-primary {
   background-color: hsl(229, 47%, 14%);
 }
+
+.bg-grey-primary {
+  background-color: hsl(240, 5%, 64.9%);
+}
+
+
+@layer utilities {
+  .bg-gradient-dark {
+    background: var(--gradient-background);
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
+
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -270,7 +301,7 @@
 
 
 .logout-button {
-  @apply bg-gradient-to-r from-pink-400 to-pink-500 shadow-lg;
+  @apply bg-gradient-to-r from-pink-800 to-pink-700 shadow-lg;
 
   background-blend-mode: screen;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);

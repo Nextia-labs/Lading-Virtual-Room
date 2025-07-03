@@ -10,6 +10,7 @@ import NotFound from "@/pages/not-found";
 import { ProtectedRoute } from "./lib/protected-route";
 import { AuthProvider } from "./hooks/use-auth";
 
+
 function Router() {
   return (
     <Switch>
@@ -25,10 +26,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

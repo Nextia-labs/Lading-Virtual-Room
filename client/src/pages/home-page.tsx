@@ -18,12 +18,14 @@ import {
   LogOut
 } from "lucide-react";
 import VirtualStylingDemo from "@/components/VirtualStylingDemo";
-
 import ThemeToggle from "@/components/ui/ThemeToggle"
+
+
 
 export default function HomePage() {
   const { user, logoutMutation } = useAuth();
   const [, setLocation] = useLocation();
+
 
   const handleSubscribe = (plan: string) => {
     setLocation("/subscribe");
@@ -140,7 +142,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-pearl-white">
+      <section id="features"  className={`py-20 bg-white text-black dark:bg-gradient-dark dark:text-pearl-white`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-trigger">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">
@@ -274,7 +276,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section id="testimonials" className={`py-20 bg-white dark:bg-dark-primary`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-trigger">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">
@@ -352,7 +354,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gradient-to-br from-plasma-white via-pearl-white to-soft-blue/10">
+      <section id="pricing" className="py-20  bg-gradient-to-br from-plasma-white via-pearl-white to-soft-blue/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-trigger">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">

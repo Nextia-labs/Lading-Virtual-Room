@@ -1,9 +1,31 @@
-# Ignorar archivos de entorno
+# Archivos de entorno
 .env
 .env.*
-node_modules
-dist
+
+# Node
+node_modules/
+
+# Build de producción
+dist/
+
+# Archivos temporales del sistema
 .DS_Store
-server/public
-vite.config.ts.*
+
+# Archivos de bundle comprimidos
 *.tar.gz
+
+# Configs locales de Vite
+vite.config.ts.*
+.vscode/
+.replit/
+
+# Backend - no se necesita para GitHub Pages
+server/
+migrations/
+shared/
+schemas/
+drizzle.config.ts
+package-lock.json
+
+# Assets no necesarios en el repo
+server/public/
