@@ -53,7 +53,7 @@
   --popover-foreground: hsl(0, 0%, 98%);
   --card: hsl(240, 10%, 3.9%);
   --card-foreground: hsl(240, 10%, 3.9%);
-  --border: hsl(240, 3.7%, 15.9%);
+  --border: hsl(211, 100%, 99%);
   --input: hsl(240, 3.7%, 15.9%);
   --primary: hsl(207, 90%, 54%);
   --primary-foreground: hsl(211, 100%, 99%);
@@ -63,14 +63,9 @@
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
+  --dark-primary: hsl(208, 14%, 97%);
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
-  --gradient-background: linear-gradient(
-      135deg,
-      hsl(188, 100%, 12%) 0%,
-      hsl(188, 100%, 17%) 50%,
-      hsl(188, 100%, 22%) 100%
-    );
 
   --gradient-hero: linear-gradient(
   135deg,
@@ -78,7 +73,21 @@
   hsl(190, 100%, 22%) 50%,    /* Azul profundo */
   hsl(308, 100%, 30%) 100%    /* Magenta vibrante, más tenue */
   );
-  
+
+  --plasma-white: linear-gradient(
+    135deg,
+    hsl(240, 5%, 15%) 0%,    /* Negro muy oscuro con un toque de azul, más claro */
+    hsl(263, 11%, 20%) 50%,   /* Morado oscuro sutil, más claro */
+    hsl(216, 10%, 17%) 100%    /* Otro tono de negro azulado oscuro, más claro */
+    
+  );
+  /* Rounded */
+  --pearl-white: linear-gradient(
+    135deg,
+    hsl(240, 5%, 8%) 0%,    /* Negro muy oscuro con un toque de azul */
+    hsl(260, 10%, 15%) 50%,   /* Morado oscuro sutil */
+    hsl(220, 8%, 10%) 100%    /* Otro tono de negro azulado oscuro */
+  );
 }
 
 @layer base {
@@ -145,7 +154,7 @@
 }
 
 .text-dark-primary {
-  color: hsl(229, 47%, 14%);
+  color: var(--dark-primary);
 }
 
 .bg-plasma-white {
@@ -187,11 +196,18 @@
 
 @layer utilities {
   .bg-gradient-dark {
-    background: var(--gradient-background);
+    background: var(--background);
   }
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
+  .bg-pearl-white {
+    background: var(--pearl-white);
+  }
+  .bg-plasma-white {
+    background: var(--plasma-white);
+  }
+
 }
 
 

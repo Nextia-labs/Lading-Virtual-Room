@@ -234,7 +234,7 @@ export default function VirtualStylingDemo() {
                   Tu Modelo Virtual
                 </h3>
                 
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/50">
+                <div className="bg-pearl-white backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/50">
                   <label className="block text-base font-medium mb-3 text-gray-700">
                     Sube tu foto o elige un avatar:
                   </label>
@@ -298,9 +298,9 @@ export default function VirtualStylingDemo() {
                   Define tu Estilo
                 </h3>
                 
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/50 space-y-4">
+                <div className="bg-pearl-white backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/50 space-y-4">
                   <div>
-                    <label className="block text-base font-medium mb-2 text-gray-700">
+                    <label className="block text-base font-medium mb-2 text-gray-700 dark:text-white">
                       Tipo de Prenda
                     </label>
                     <Select
@@ -321,7 +321,7 @@ export default function VirtualStylingDemo() {
                   </div>
                   
                   <div>
-                    <label className="block text-base font-medium mb-2 text-gray-700">
+                    <label className="block text-base font-medium mb-2 text-gray-700 dark:text-white">
                       Estilo Preferido
                     </label>
                     <Select
@@ -407,14 +407,14 @@ export default function VirtualStylingDemo() {
             </div>
 
             {/* Results Panel */}
-            <Card className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 min-h-[600px] flex flex-col items-center justify-center relative animate-bounce-soft card-shadow">
+            <Card className="bg-pearl-white backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 min-h-[600px] flex flex-col items-center justify-center relative animate-bounce-soft card-shadow">
               <CardContent className="p-8 w-full">
                 {demoState === 'initial' && (
                   <div className="text-center">
                     <div className="w-20 h-20 bg-gradient-to-br from-vibrant-cyan/20 to-fashion-pink/20 rounded-full flex items-center justify-center mb-6 mx-auto">
                       <Settings className="w-10 h-10 text-gray-400" />
                     </div>
-                    <p className="text-lg text-gray-600">
+                    <p className="text-lg text-gray-600 dark:text-white">
                       Configura tus opciones a la izquierda y <span className="font-semibold gradient-text">descubre tu look ideal.</span>
                     </p>
                   </div>
@@ -448,8 +448,8 @@ export default function VirtualStylingDemo() {
                       </div>
                       
                       <div className="bg-gradient-to-br from-vibrant-cyan/10 to-fashion-pink/10 p-4 rounded-lg border border-white/50">
-                        <p className="text-sm text-gray-600 mb-1 font-semibold">Look Recomendado:</p>
-                        <p className="text-gray-800 text-sm">{result.description}</p>
+                        <p className="text-sm text-dark-primary mb-1 font-semibold">Look Recomendado:</p>
+                        <p className="text-dark-primary text-sm">{result.description}</p>
                       </div>
                       
                       <Button 
