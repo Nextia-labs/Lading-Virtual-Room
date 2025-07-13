@@ -148,7 +148,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">
               Revolutionary <span className="text-fashion-pink">Features</span>
             </h2>
-            <p className="text-xl text-dark-primary/70 max-w-3xl mx-auto">
+            <p className="text-xl text-dark-primary max-w-3xl mx-auto">
               Discover how Nextia's Virtual Room transforms your shopping experience with cutting-edge technology
             </p>
           </div>
@@ -192,7 +192,7 @@ export default function HomePage() {
                 description: "Use Nextia on any device - smartphone, tablet, or desktop. Your virtual wardrobe syncs everywhere."
               }
             ].map((feature, index) => (
-              <Card key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 scroll-trigger">
+              <Card key={index} className="group bg-white dark:bg-pearl-white  text-dark-primary rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 scroll-trigger">
                 <CardContent className="p-0">
                   <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     {feature.icon}
@@ -209,7 +209,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-gradient-to-r from-plasma-white to-pearl-white">
+      <section id="how-it-works" className="py-20 bg-gradient-to-r from-plasma-white dark:bg-plasma-white to-pearl-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-trigger">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">
@@ -249,7 +249,7 @@ export default function HomePage() {
             ].map((step, index) => (
               <div key={index} className="text-center scroll-trigger">
                 <div className="relative mb-8">
-                  <div className={`w-32 h-32 bg-gradient-to-r ${step.gradient} rounded-full mx-auto flex items-center justify-center shadow-2xl`}>
+                  <div className={`w-32 h-32  dark:bg-pearl-white ${step.gradient} rounded-full mx-auto flex items-center justify-center shadow-2xl`}>
                     {step.icon}
                   </div>
                   <div className={`absolute -top-2 -right-2 w-12 h-12 ${step.numberBg} rounded-full flex items-center justify-center text-white font-bold text-xl`}>
@@ -276,7 +276,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className={`py-20 bg-white dark:bg-dark-primary`}>
+      <section id="testimonials" className={`py-20 bg-white dark:bg-dark-primary dark:bg-gradient-dark`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-trigger">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">
@@ -311,12 +311,12 @@ export default function HomePage() {
               <Card key={index} className="bg-pearl-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 scroll-trigger">
                 <CardContent className="p-0">
                   <div className="flex items-center mb-6">
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${testimonial.gradient} flex items-center justify-center mr-4`}>
+                    <div className={`w-16 h-16 rounded-full bg-gradient-to-r${testimonial.gradient} flex items-center justify-center mr-4`}>
                       <UserPlus className="text-white text-xl" />
                     </div>
                     <div>
                       <h4 className="font-bold text-dark-primary">{testimonial.name}</h4>
-                      <p className="text-dark-primary/60">{testimonial.role}</p>
+                      <p className="text-dark-primary">{testimonial.role}</p>
                     </div>
                   </div>
                   <div className="flex mb-4">
@@ -324,7 +324,7 @@ export default function HomePage() {
                       <Star key={i} className="w-5 h-5 text-fashion-pink fill-current" />
                     ))}
                   </div>
-                  <p className="text-dark-primary/80 italic leading-relaxed">
+                  <p className="text-dark-primary italic leading-relaxed">
                     "{testimonial.review}"
                   </p>
                 </CardContent>
@@ -354,7 +354,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20  bg-gradient-to-br from-plasma-white via-pearl-white to-soft-blue/10">
+      <section id="pricing" className="py-20  bg-gradient-to-br from-plasma-white dark:bg-plasma-white via-pearl-white to-soft-blue/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-trigger">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-primary mb-6">
@@ -409,7 +409,7 @@ export default function HomePage() {
                 isPopular: false
               }
             ].map((plan, index) => (
-              <Card key={index} className={`bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 scroll-trigger relative ${plan.isPopular ? 'popular-glow' : ''}`}>
+              <Card key={index} className={`bg-plasma-white dark:bg-pearl-white text-dark-primary rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 scroll-trigger relative ${plan.isPopular ? 'popular-glow' : ''}`}>
                 {plan.isPopular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-vibrant-cyan text-white px-6 py-2 rounded-full text-sm font-semibold">
                     Most Popular
