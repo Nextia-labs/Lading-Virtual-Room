@@ -1,13 +1,13 @@
+
 {
   "name": "nextia-landing",
   "version": "1.0.0",
   "private": true,
   "homepage": "https://nextia-labs.github.io/Lading-Virtual-Room",
   "scripts": {
-    "dev": "npm run dev --prefix client",
-    "build": "npm run build --prefix client",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d client/dist"
+    "dev":    "npm run dev --prefix client",
+    "build":  "npm run build --prefix client",
+    "deploy": "npm run build && git add docs && git commit -m \"chore: deploy landing page\" && git push"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
