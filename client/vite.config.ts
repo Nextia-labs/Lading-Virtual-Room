@@ -19,7 +19,7 @@ export default defineConfig({
   },
   root: ".",          // ya estás dentro de client
   build: {
-    outDir: "dist",    // client/dist
+    outDir: "../docs",    // client/dist
     emptyOutDir: true,
   },
 });
